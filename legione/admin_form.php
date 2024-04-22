@@ -3,6 +3,7 @@
 $conex = new mysqli('localhost','root','mysqlezequiel1_','img');
 
 $nombre = $_POST['nombre'];
-$imagen = addslashes(file_get_contents($imagen));
-$consulta = "INSERT into images VALUES ('','$imagen')";
+
+$image = $_FILES["imagen"]["tmp_name"];
+$consulta = "INSERT into images VALUES ('1','$image')";
 $enviar= $conex->query($consulta);
