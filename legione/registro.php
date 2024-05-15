@@ -8,11 +8,10 @@ $mail = $_POST["mail"];
 $consulta = "INSERT INTO persone values ('$name','$ape','$mail','$pas')";
 $ejecutar =  $conex -> query($consulta);
  
-
-/*echo '
+echo '
 <script>
 alert("usuario guardado exitosamente");
 window.location = "registro.php";
 </script>
    ';
-*/
+

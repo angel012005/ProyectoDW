@@ -1,17 +1,12 @@
 <?php
-include "conexion.php";
-
-
+include "Conexion.php";
 $name = $_POST["name"];
 $pass = $_POST["password"];
-$consulta = "SELECT  * FROM persone";
+$consulta = "SELECT * FROM  persone where nombre = '$name'";
 $resultado = $conex->query($consulta);
-$row= mysqli_fetch_array($resultado);
-
-if ($name = $row["nombre"] )  {
-     if ($contra= $row["contraseña"]){
+$row = mysqli_fetch_array($resultado);
+     if ($pass == $row[3]){
         echo"gg";
-     }
 }else{
     echo "noi";
 }
