@@ -15,12 +15,12 @@
     <?php
 
 $conex = new mysqli('localhost','root','mysqlezequiel1_','img');
-$consulta = "SELECT * FROM IMAGES where id = 4 ";
+$consulta = "SELECT * FROM IMAGES where id = 5 ";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
 $im = $row['cosa'];
-echo '<img src="data:image/jpeg;base64,'.base64_encode($im) .' "/>';
-print_r($row);
+echo '<img src="data:image/$im;base64,'.base64_encode($im) .' "  width: 100% height: 100%;/>';
         ?>
 </body>
 </html>
+	
