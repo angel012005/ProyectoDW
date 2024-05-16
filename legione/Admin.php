@@ -15,7 +15,7 @@
     <?php
 
 $conex = new mysqli('localhost','root','mysqlezequiel1_','img');
-$consulta = "SELECT * FROM IMAGES where id = 5 ";
+$consulta = "SELECT * FROM IMAGES where id = 8 ";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
 $im = $row['cosa'];
