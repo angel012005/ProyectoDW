@@ -12,10 +12,11 @@
         <input type="file" name="imagen" required>
         <input type="submit" value="Subir">
     </form>
-    <?php
 
+    <form action="" method="post"></form>
+    <?php
 $conex = new mysqli('localhost','root','mysqlezequiel1_','img');
-$consulta = "SELECT * FROM IMAGES where id = 8 ";
+$consulta = "SELECT * FROM IMAGES where nombre = 'jose'";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
 $im = $row['cosa'];
@@ -23,4 +24,4 @@ echo '<img src="data:image/$im;base64,'.base64_encode($im) .' "  width: 100% hei
         ?>
 </body>
 </html>
-	
+	                                                 
