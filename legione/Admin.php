@@ -13,10 +13,14 @@
         <input type="submit" value="Subir">
     </form>
 
-    <form action="" method="post"></form>
+    <form action="" method="post">
+     <input type="text" name="name" id="">
+     <input type="submit" value="enviar">
+    </form>
     <?php
+$nombr = $_POST["name"];
 $conex = new mysqli('localhost','root','mysqlezequiel1_','img');
-$consulta = "SELECT * FROM IMAGES where nombre = 'jose'";
+$consulta = "SELECT * FROM IMAGES where nombre = '$nombr'";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
 $im = $row['cosa'];
