@@ -25,6 +25,7 @@ $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
 $im = $row['cosa'];
 echo '<img src="data:image/$im;base64,'.base64_encode($im) .' "  width: 100% height: 100%;/>';
+        echo;
         ?>
 </body>
 </html>
