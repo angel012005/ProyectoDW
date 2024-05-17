@@ -6,7 +6,17 @@ $consulta = "SELECT * FROM  persone where nombre = '$name'";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
      if ($pass == $row[3]){
-        echo"gg";
+        echo '
+<script>
+alert("Sesion iniciada");
+window.location = "index.html";
+</script>
+   ';
 }else{
-    echo "noi";
+    echo '
+<script>
+alert("incorrecto");
+window.location = "login.html";
+</script>
+   ';
 }

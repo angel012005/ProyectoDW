@@ -11,7 +11,7 @@ $ejecutar =  $conex -> query($consulta);
 echo '
 <script>
 alert("usuario guardado exitosamente");
-window.location = "registro.php";
+window.location = "login.html";
 </script>
    ';
 
