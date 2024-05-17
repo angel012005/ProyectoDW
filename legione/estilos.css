@@ -76,9 +76,12 @@ margin-left: 20px;
     color: black;
     padding: 20px;
     display: block;
-    transition: all .2s ease;
     text-decoration: none;
 }
+.header .navigation ul li ul li:hover{
+  background-color: #c71f1f;
+}
+
 
 .header .navigation ul li a:hover{
     background-color: #D1C366;
@@ -95,6 +98,7 @@ margin-left: 20px;
 .header .navigation ul li ul li a{
     font-size: 15px;
     text-transform: capitalize;
+    transition: all 2s ease;
 }
 
 .header .navigation ul li ul li ul{
