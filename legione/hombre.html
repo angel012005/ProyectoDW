@@ -3,49 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="stiyle.css">
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="index.html"><img src="img/logo-fotor-bg-remover-20240407131628.png" alt="logo de la compañia"></a>
-            <h2 class="Nombre_Empresa">Legione</h2>
-        </div>
+    <header>
 
-        <nav class="navigation">
+        <div class="navbar">  <!--Div menu bar -->
+            <div class="logo-container">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo-image"></a>
+                <a href="index.html" class="logo-name">Legione</a>
+            </div>
+            
+            <ul class="links">
+                <li><a href="#">Inicio</a></li>
 
-
-            <ul>
-                <li id="busquedas">
-                    <form action="">
-                        <input type="text" name="Busqueda" class="buz" placeholder="Carrito De Compras">
-                    </form>
-                    <a href="#" class="nav-link"><img src="img/search-alt-2-regular-24.png" alt="Busqueda"></a>
-                </li>
-
-                <li><a href="carrito.html" class="nav-link"><img src="img/shopping-bag-alt-solid-24.png"
-                            alt="Carrito"></a></li>
-                <li><a href="#" class="nav-link"><img src="img/male-regular-24.png" alt="iniciar sesion"></a>
-                    <ul>
-                        <li><a href="login.html">Iniciar sesion</a></li>
-                        <li><a href="#">Mis pedidos</a></li>
-                        <li><a href="#">Ajustes de la cuenta</a></li>
+                <li class="dropdown-catalogo">
+                    <a href="#">Catalogo</a>
+                    <ul class="dropdown-menu-catalogo">
+                        <li><a class="Size" href="hombre.html">Caballero</a></li>
+                        <li><a class="Size" href="#">Dama</a></li>
+                        <li><a class="Size" href="#">Niños</a></li>
                     </ul>
-
                 </li>
-                <li><a href="#" class="nav-link"><img src="img/menu-regular-24.png" alt="Menu"></a>
-                    <Ul>
-                        <li><a href="#">Mujer</a></li>
-                        <li><a href="#">Hombre</a></li>
-                        <li><a href="#">Zapatillas</a></li>
-                        <li><a href="#">Mochilas</a></li>
-                        <li><a href="#">Deportes</a></li>
-                        <li><a href="#">Novedades</a></li>
-                    </Ul>
+
+                <li><a href="#">Novedades</a></li>
+                <li class="dropdown-catalogo">
+                    <a href="#">Ajustes</a>
+                    <ul class="dropdown-menu-catalogo">
+                        <li><a class="Size" href="#">Informacion de la cuenta</a></li>
+                        <li><a class="Size" href="#">Contactos</a></li>
+                        
+                    </ul>
                 </li>
             </ul>
-        </nav>
+
+            <div class="action-container">
+
+                <div class="bag-shopping">
+                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+
+                <form action="">
+                    <input type="text" name="Busqueda" class="busqueda" placeholder="Carrito De Compras">
+                </form>
+                <a href="#" class="nav-link"> <i class="fa-solid fa-magnifying-glass"></i></a>
+
+                <a href="#" class="action_btn">Iniciar sesión</a>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            </div> <!--Fin Div navbar -->
+
+        <div class="dropdown_menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catalogo</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Ajustes</a></li>
+            <li><a href="#" class="action_btn">Iniciar sesion</a></li>
+        </div>
     </header>
 
         <div class="titulo_productos">

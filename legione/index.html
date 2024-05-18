@@ -4,100 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <title>Legione Principal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="stiyle.css">
+    <title>Legione</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="#"><img src="img/logo-fotor-bg-remover-20240407131628.png" alt="logo de la compañia"></a>
-            <h2 class="Nombre_Empresa">Legione</h2>
-        </div>
+    <header>
 
-        <nav class="navigation">
+        <div class="navbar">  <!--Div menu bar -->
+            <div class="logo-container">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo-image"></a>
+                <a href="index.html" class="logo-name">Legione</a>
+            </div>
+            
+            <ul class="links">
+                <li><a href="#">Inicio</a></li>
 
-
-            <ul>
-                <li id="busquedas">
-                    <form action="">
-                        <input type="text" name="Busqueda" class="buz" placeholder="Carrito De Compras">
-                    </form>
-                    <a href="#" class="nav-link"><img src="img/search-alt-2-regular-24.png" alt="Busqueda"></a>
-                </li>
-
-                <li><a href="carrito.html" class="nav-link"><img src="img/shopping-bag-alt-solid-24.png"
-                            alt="Carrito"></a></li>
-                <li><a href="#" class="nav-link"><img src="img/male-regular-24.png" alt="iniciar sesion"></a>
-                    <ul>
-                        <li><a href="login.html">Iniciar sesion</a></li>
-                        <li><a href="#">Mis pedidos</a></li>
-                        <li><a href="admin.php">Subir imagen</a></li>
+                <li class="dropdown-catalogo">
+                    <a href="#">Catalogo</a>
+                    <ul class="dropdown-menu-catalogo">
+                        <li><a class="Size" href="hombre.html">Caballero</a></li>
+                        <li><a class="Size" href="#">Dama</a></li>
+                        <li><a class="Size" href="#">Niños</a></li>
                     </ul>
-
                 </li>
-                <li><a href="#" class="nav-link"><img src="img/menu-regular-24.png" alt="Menu"></a>
-                    <Ul>
-                        <li><a href="#">Mujer</a></li>
-                        <li><a href="hombre.html">Hombre</a></li>
-                        <li><a href="#">Zapatillas</a></li>
-                        <li><a href="#">Mochilas</a></li>
-                        <li><a href="#">Deportes</a></li>
-                        <li><a href="#">Novedades</a></li>
-                    </Ul>
+
+                <li><a href="#">Novedades</a></li>
+                <li class="dropdown-catalogo">
+                    <a href="#">Ajustes</a>
+                    <ul class="dropdown-menu-catalogo">
+                        <li><a class="Size" href="#">Informacion de la cuenta</a></li>
+                        <li><a class="Size" href="#">Contactos</a></li>
+                        
+                    </ul>
                 </li>
             </ul>
-        </nav>
+
+            <div class="action-container">
+
+                <div class="bag-shopping">
+                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+
+                <form action="">
+                    <input type="text" name="Busqueda" class="busqueda" placeholder="Busqueda">
+                </form>
+                <a href="#" class="nav-link"> <i class="fa-solid fa-magnifying-glass"></i></a>
+
+                <a href="login.html" class="action_btn">Iniciar sesión</a>
+            </div>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            </div> <!--Fin Div navbar -->
+
+        <div class="dropdown_menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catalogo</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li><a href="#">Ajustes</a></li>
+            <li><a href="#" class="action_btn">Iniciar sesion</a></li>
+        </div>
     </header>
 
-    <div id="h1_img">
-        <h1>Novedades </h1>
-    </div>
-
-    <section id="seccion">
-
-        <div class="caja_section"></div>
-        <img src="img/vista-frontal-mujer-equipamiento-deportivo.jpg" alt="">
-        <img src="img/mujer-jengibre-entorno-urbano-limpio.jpg" alt="">
-        <img src="img/mujer-deportiva-mirando-smartphone.jpg" alt="">
-        <img src="img/2148499212.jpg" alt="">
+  <section id="section-carrusel">
+        <div class="gallery-container">
+            <figure class="gallery-item">
+                <img src="img/short depo.jpg" alt="Imagen 1">
+                <figcaption>Descripción de la imagen 1</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="img/cami.jpg" alt="Imagen 2">
+                <figcaption>Descripción de la imagen 2</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="img/botin.jpg" alt="Imagen 3">
+                <figcaption>Descripción de la imagen 3</figcaption>
+            </figure>
+            <!-- ... otras imágenes ... -->
         </div>
-    </section>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer class="pie_pagina">
-        <div class="grupo1">
-            <div class="box">
-                <figure>
-                    <a href="#">
-                        <img src="img/logo-fotor-bg-remover-20240407131628.png" alt="" lo de la empresa>
-                    </a>
-                </figure>
-            </div>
-            <div class="box">
-                <h2>SOBRE NOSOTROS</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, hic.</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, hic.</p>
-            </div>
-
-            <div class="box">
-                <h2>SIGUENOS</h2>
-                <div class="red-social">
-                    <a href="https://www.instagram.com/"><img src="img/instagram-alt-logo-24.png" alt=""></a>
-                    <a href="https://www.facebook.com/"><img src="img/facebook-circle-logo-24.png" alt=""></a>
-                    <a href="https://www.x.com/"><img src="img/twitter-logo-24.png" alt=""></a>
-                </div>
-            </div>
+        <div class="gallery-navigation">
+            <button class="nav-button prev-button">Anterior</button>
+            <button class="nav-button next-button">Siguiente</button>
         </div>
-        <div class="grupo2">
-            <small>&copy; 2024 <b> Slee Dw - Todos los derechos reservados. </b></small>
-        </div>
-    </footer>
+  </section>
+
+
+
+
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const DropShadowMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function (){
+            DropShadowMenu.classList.toggle('open')
+            const isOpen = DropShadowMenu.classList.contains('open')
+            
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+
+  </script>
+
+  <script>
+    /* ddddddddddddddddddddddddddddddddddddddddd para que se mueva suave  ddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+        let currentIndex = 0;
+
+        document.querySelector('.prev-button').addEventListener('click', () => {
+        navigate(-1);
+             });
+
+        document.querySelector('.next-button').addEventListener('click', () => {
+        navigate(1);
+        });
+
+        function navigate(direction) {
+        const galleryContainer = document.querySelector('.gallery-container');
+        const totalImages = document.querySelectorAll('.gallery-item').length;
+        currentIndex = (currentIndex + direction + totalImages) % totalImages;
+        const offset = -currentIndex * 100;
+        galleryContainer.style.transform = `translateX(${offset}%)`;
+                }
+/* ddddddddddddddddddddddddddddddddddddddddd para que se mueva solo  ddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+        let autoplayInterval = null;
+        function startAutoplay(interval) {
+        stopAutoplay(); // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
+        autoplayInterval = setInterval(() => {
+        navigate(1); // Navega a la siguiente imagen cada intervalo de tiempo.
+    }, interval);
+        }
+        function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+// Iniciar autoplay con un intervalo de 2 segundos.
+        startAutoplay(2000);
+
+// Opcional: Detener autoplay cuando el usuario interactúa con los botones de navegación.
+        document.querySelectorAll('.nav-button').forEach(button => {
+        button.addEventListener('click', stopAutoplay);
+});
+  </script>
+
 </body>
 
 </html>
