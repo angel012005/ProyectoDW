@@ -8,14 +8,14 @@ $row = mysqli_fetch_array($resultado);
      if ($pass == $row[3]){
         echo '
 <script>
-alert("Sesion iniciada");
+alert("Sesion iniciada redirigiendo al Inicio de la pagina");
 window.location = "index.html";
 </script>
    ';
 }else{
     echo '
 <script>
-alert("incorrecto");
+alert("Usuario o contraseña incorrectos.");
 window.location = "login.html";
 </script>
    ';

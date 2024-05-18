@@ -1,5 +1,5 @@
 <?php
-$conex = new mysqli('localhost','root','supassword','img');
+$conex = new mysqli('localhost','root','','img');
 $nombre = $_POST['nombre'];
 $image = $_FILES["imagen"]["tmp_name"];
 $imgContent = addslashes(file_get_contents($image));

@@ -20,7 +20,7 @@
     </form>
     <?php
 $nombr = $_POST["name"];
-$conex = new mysqli('localhost','root','supassword','img');
+$conex = new mysqli('localhost','root','','img');
 $consulta = "SELECT * FROM IMAGES where nombre = '$nombr'";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
