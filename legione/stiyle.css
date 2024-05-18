@@ -236,7 +236,6 @@ padding: 0 2rem;
   }
   .wrapper i:first-child{
     left: -22px;
-    display: none;
   }
   .wrapper i:last-child{
     right: -22px;
@@ -247,13 +246,6 @@ padding: 0 2rem;
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
-  }
-  .carousel.dragging{
-    cursor: grab;
-    scroll-behavior: auto;
-  }
-  .carousel.dragging img{
-    pointer-events: none;
   }
   .carousel img{
     height: 340px;
