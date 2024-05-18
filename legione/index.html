@@ -71,27 +71,17 @@
         </div>
     </header>
 
-  <section id="section-carrusel">
-        <div class="gallery-container">
-            <figure class="gallery-item">
-                <img src="img/short depo.jpg" alt="Imagen 1">
-                <figcaption>Descripción de la imagen 1</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="img/cami.jpg" alt="Imagen 2">
-                <figcaption>Descripción de la imagen 2</figcaption>
-            </figure>
-            <figure class="gallery-item">
-                <img src="img/botin.jpg" alt="Imagen 3">
-                <figcaption>Descripción de la imagen 3</figcaption>
-            </figure>
-            <!-- ... otras imágenes ... -->
+    <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="img/botin.jpg" alt="img" draggable="false">
+          <img src="img/cami.jpg" alt="img" draggable="false">
+          <img src="img/chino qdidas.jpg" alt="img" draggable="false">
+          <img src="img/short depo.jpg" alt="img" draggable="false">
+       
         </div>
-        <div class="gallery-navigation">
-            <button class="nav-button prev-button">Anterior</button>
-            <button class="nav-button next-button">Siguiente</button>
-        </div>
-  </section>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
 
 
 
@@ -114,42 +104,56 @@
   </script>
 
   <script>
-    /* ddddddddddddddddddddddddddddddddddddddddd para que se mueva suave  ddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
-        let currentIndex = 0;
-
-        document.querySelector('.prev-button').addEventListener('click', () => {
-        navigate(-1);
-             });
-
-        document.querySelector('.next-button').addEventListener('click', () => {
-        navigate(1);
-        });
-
-        function navigate(direction) {
-        const galleryContainer = document.querySelector('.gallery-container');
-        const totalImages = document.querySelectorAll('.gallery-item').length;
-        currentIndex = (currentIndex + direction + totalImages) % totalImages;
-        const offset = -currentIndex * 100;
-        galleryContainer.style.transform = `translateX(${offset}%)`;
-                }
-/* ddddddddddddddddddddddddddddddddddddddddd para que se mueva solo  ddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
-        let autoplayInterval = null;
-        function startAutoplay(interval) {
-        stopAutoplay(); // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
-        autoplayInterval = setInterval(() => {
-        navigate(1); // Navega a la siguiente imagen cada intervalo de tiempo.
-    }, interval);
-        }
-        function stopAutoplay() {
-        clearInterval(autoplayInterval);
-    }
-// Iniciar autoplay con un intervalo de 2 segundos.
-        startAutoplay(2000);
-
-// Opcional: Detener autoplay cuando el usuario interactúa con los botones de navegación.
-        document.querySelectorAll('.nav-button').forEach(button => {
-        button.addEventListener('click', stopAutoplay);
+    const carousel = document.querySelector(".carousel"),
+firstImg = carousel.querySelectorAll("img")[0],
+arrowIcons = document.querySelectorAll(".wrapper i");
+let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+const showHideIcons = () => {
+    // showing and hiding prev/next icon according to carousel scroll left value
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+}
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+    });
 });
+const autoSlide = () => {
+ 
+}
+const dragStart = (e) => {
+    // updatating global variables value on mouse down event
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    // scrolling images/carousel to left according to mouse pointer
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    showHideIcons();
+}
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+}
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+document.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);
   </script>
 
 </body>
