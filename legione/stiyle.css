@@ -206,6 +206,7 @@ padding: 0 2rem;
     
 }
 /* fon head */
+
 /* carrusel*/ 
 .caja-del-carrusel {
 width: 90%;
@@ -277,6 +278,50 @@ margin-top:3% ;
   }
   
 /* fin  carrusel*/ 
+
+/*forms*/ 
+.form {
+    margin: 10% auto;
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    backdrop-filter: blur(10px); 
+  }
+
+  .form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .entrada {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .enviar {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+  }
+  .enviar:hover {
+    background-color:#ffbf00;
+  }
+  .form p {
+    text-align: center;
+  }
+  .form p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .form p a:hover {
+    text-decoration: underline;
+  }
 /* footer */
 .footer{
     background-color: #252323;
