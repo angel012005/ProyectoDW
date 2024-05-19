@@ -12,7 +12,7 @@
     background-size: cover;
     background-attachment: fixed ;
 } 
-
+/* head */
 li{
 list-style: none;
 }
@@ -205,23 +205,14 @@ padding: 0 2rem;
     
     
 }
-
+/* fon head */
 /* carrusel*/ 
 .caja-del-carrusel {
 width: 90%;
 display: flex;
 height: 60%;
 margin: 0% auto;
-
-}
-
-.caja-del-carrusel .carrusel{
-   width: 100%;
-   display: flex;
-  margin: 0% auto;
-  overflow: hidden;
-  position: relative;
-  scroll-behavior: smooth;
+margin-top:3% ;
 }
 .flechas{
     display: flex;
@@ -248,9 +239,17 @@ margin: 0% auto;
   .button:hover{
     background: #fffb00;
   }
- 
- 
 
+.caja-del-carrusel .carrusel{
+   width: 100%;
+   display: flex;
+  margin: 0% auto;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+ 
 .caja-del-carrusel .carrusel .caja-img{
     min-width: calc(100% / 3);
     max-height: 100%;
@@ -259,7 +258,7 @@ margin: 0% auto;
 }
 /*.caja-del-carrusel .carrusel .caja-img:first-child{
     min-width: 100%;
-    
+    esto es para que la primera imagen del carrusel ocupe 3 espacios.
 }*/
 .caja-del-carrusel .carrusel .caja-img img{
     width: 100%;
@@ -278,3 +277,43 @@ margin: 0% auto;
   }
   
 /* fin  carrusel*/ 
+/* footer */
+.footer{
+    background-color: #252323;
+    color: #fff;
+    max-height: max-content;
+    min-height: max-content;
+    overflow: hidden;
+}
+.footer .caja-footer-1{
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+}
+.footer .caja-footer-1 .caja-footer-1a{
+     min-width: 50%;
+     text-align: center;
+     display: flex;
+     float: left;
+     align-items: center;
+}
+.footer .caja-footer-1 .caja-footer-1a img{
+    width: 50%; 
+    height: auto; 
+}
+.footer .caja-footer-1 .caja-footer-1b{
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .caja-footer-1 .caja-footer-1b a:hover{
+    background-color: #fffb00;
+    border-radius: 50%;
+}
+.footer .caja-footer-2{
+    text-align: center;
+    margin: 1%;
+    
+}
+/* fin footer */
