@@ -72,15 +72,18 @@
     </header>
 
     <div class="caja-del-carrusel">
-        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="flechas"><button id="left" class="button l"> < </button></div>
         <div class="carrusel">
             <div class="caja-img"><img src="img/botin.jpg" alt="img"></div>
             <div class="caja-img"><img src="img/cami.jpg" alt="img" ></div>
             <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img"></div>
             <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img" ></div>
             <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/cami.jpg" alt="img" ></div>
+            
         </div>
-        <i id="right" class="fa-solid fa-angle-right"></i>
+        <div class="flechas"><button id="right" class="button r">></button></div>
       </div>
 
 
@@ -106,26 +109,42 @@
   <script>
  const carrusel = document.querySelector(".carrusel");
     const firstImg = carrusel.querySelector("img");
-    const arrowIcons = document.querySelectorAll(".caja-del-carrusel i");
+    const arrowLeft = document.getElementById("left");
+    const arrowRight = document.getElementById("right")
     const cajaImgWidth = carrusel.querySelector(".caja-img").offsetWidth; // Ancho de una caja de imagen
     let prevScrollLeft = 0;
 
-    arrowIcons.forEach(icon => {
-        icon.addEventListener("click", () => {
-            const increment = icon.id == "left" ? -cajaImgWidth : cajaImgWidth;
-            carrusel.scrollLeft += increment;
-            setTimeout(() => showHideIcons(), 60); // Llama a la función showHideIcons después de 60ms
-        });
-    });
-
+    
+    
     const autoSlide = () => {
         const increment = cajaImgWidth;
         carrusel.scrollLeft += increment;
+
+        // Verificar si llegamos al final del carrusel
+        if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+            // Si llegamos al final, volvemos al inicio
+            carrusel.scrollLeft = 0;
+        }
+
         prevScrollLeft = carrusel.scrollLeft;
         setTimeout(autoSlide, 3000);
     }
+    // Agregar event listener para la flecha izquierda
+        arrowLeft.addEventListener("click", () => {
+        carrusel.scrollLeft -= cajaImgWidth;
+        });
 
-    autoSlide();
+    // Agregar event listener para la flecha derecha
+        arrowRight.addEventListener("click", () => {
+        carrusel.scrollLeft += cajaImgWidth;
+
+        // Verificar si llegamos al final del carrusel
+        if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+            // Si llegamos al final, volvemos al inicio
+            carrusel.scrollLeft = 0;
+        }
+    });
+        setTimeout(autoSlide, 3000);
 </script>
 
 </body>
