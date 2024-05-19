@@ -222,7 +222,7 @@ height: 60%;
   scroll-behavior: smooth;
 }
 .caja-del-carrusel .carrusel .caja-img{
-    min-width: calc((100% / 3));
+    min-width: calc(100% / 3);
     
 }
 

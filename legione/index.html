@@ -104,31 +104,28 @@
   </script>
 
   <script>
-    const carrusel = document.querySelector(".carrusel"),
-    firstImg = carrusel.querySelectorAll("img")[0],
-    arrowIcons = document.querySelectorAll(".caja-del-carrusel i");
-   
+ const carrusel = document.querySelector(".carrusel");
+    const firstImg = carrusel.querySelector("img");
+    const arrowIcons = document.querySelectorAll(".caja-del-carrusel i");
+    const cajaImgWidth = carrusel.querySelector(".caja-img").offsetWidth; // Ancho de una caja de imagen
+    let prevScrollLeft = 0;
+
     arrowIcons.forEach(icon => {
-     icon.addEventListener("click", () => {
-        let firstImgWidth = firstImg.clientWidth ; // getting first img width & adding 14 margin value
-        // if clicked icon is left, reduce width value from the carrusel scroll left else add to it
-        carrusel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
-        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+        icon.addEventListener("click", () => {
+            const increment = icon.id == "left" ? -cajaImgWidth : cajaImgWidth;
+            carrusel.scrollLeft += increment;
+            setTimeout(() => showHideIcons(), 60); // Llama a la función showHideIcons después de 60ms
+        });
     });
-});
+
     const autoSlide = () => {
-        // if there is no image left to scroll then return from here
-     if(carrusel.scrollLeft - (carrusel.scrollWidth - carrusel.clientWidth) > -1 || carrusel.scrollLeft <= 0) return;
-        positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
-        let firstImgWidth = firstImg.clientWidth + 14;
-    // getting difference value that needs to add or reduce from carrusel left to take middle img center
-        let valDifference = firstImgWidth - positionDiff;
-     if(carrusel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
-        return carrusel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+        const increment = cajaImgWidth;
+        carrusel.scrollLeft += increment;
+        prevScrollLeft = carrusel.scrollLeft;
+        setTimeout(autoSlide, 3000);
     }
-    // if user is scrolling to the left
-        carrusel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
-}
+
+    autoSlide();
 </script>
 
 </body>
