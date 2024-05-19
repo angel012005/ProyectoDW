@@ -71,14 +71,14 @@
         </div>
     </header>
 
-    <div class="wrapper">
+    <div class="caja-del-carrusel">
         <i id="left" class="fa-solid fa-angle-left"></i>
-        <div class="carousel">
-          <img src="img/botin.jpg" alt="img" draggable="false">
-          <img src="img/cami.jpg" alt="img" draggable="false">
-          <img src="img/chino qdidas.jpg" alt="img" draggable="false">
-          <img src="img/short depo.jpg" alt="img" draggable="false">
-       
+        <div class="carrusel">
+            <div class="caja-img"><img src="img/botin.jpg" alt="img"></div>
+            <div class="caja-img"><img src="img/cami.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img"></div>
+            <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
         </div>
         <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
@@ -104,57 +104,32 @@
   </script>
 
   <script>
-    const carousel = document.querySelector(".carousel"),
-    firstImg = carousel.querySelectorAll("img")[0],
-    arrowIcons = document.querySelectorAll(".wrapper i");
-    let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
-    const showHideIcons = () => {
-    // showing and hiding prev/next icon according to carousel scroll left value
-    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
-    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
-    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
-}
+    const carrusel = document.querySelector(".carrusel"),
+    firstImg = carrusel.querySelectorAll("img")[0],
+    arrowIcons = document.querySelectorAll(".caja-del-carrusel i");
+   
     arrowIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
-        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
-        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
-        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+     icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth ; // getting first img width & adding 14 margin value
+        // if clicked icon is left, reduce width value from the carrusel scroll left else add to it
+        carrusel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
         setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
     });
 });
     const autoSlide = () => {
- 
+        // if there is no image left to scroll then return from here
+     if(carrusel.scrollLeft - (carrusel.scrollWidth - carrusel.clientWidth) > -1 || carrusel.scrollLeft <= 0) return;
+        positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+        let firstImgWidth = firstImg.clientWidth + 14;
+    // getting difference value that needs to add or reduce from carrusel left to take middle img center
+        let valDifference = firstImgWidth - positionDiff;
+     if(carrusel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+        return carrusel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    // if user is scrolling to the left
+        carrusel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
 }
-    const dragStart = (e) => {
-    // updatating global variables value on mouse down event
-    isDragStart = true;
-    prevPageX = e.pageX || e.touches[0].pageX;
-    prevScrollLeft = carousel.scrollLeft;
-}
-    const dragging = (e) => {
-    // scrolling images/carousel to left according to mouse pointer
-    if(!isDragStart) return;
-    e.preventDefault();
-    isDragging = true;
-    carousel.classList.add("dragging");
-    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-    carousel.scrollLeft = prevScrollLeft - positionDiff;
-    showHideIcons();
-}
-    const dragStop = () => {
-    isDragStart = false;
-    carousel.classList.remove("dragging");
-    if(!isDragging) return;
-    isDragging = false;
-    autoSlide();
-}
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("touchstart", dragStart);
-    document.addEventListener("mousemove", dragging);
-    carousel.addEventListener("touchmove", dragging);
-    document.addEventListener("mouseup", dragStop);
-    carousel.addEventListener("touchend", dragStop);
-  </script>
+</script>
 
 </body>
 
