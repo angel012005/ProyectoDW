@@ -1,100 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>legione registro</title>
-    <link rel="stylesheet" href="stiyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="stiyle.css" />
+  </head>
+  <body>
     <header>
-
-        <div class="navbar">  <!--Div menu bar -->
-            <div class="logo-container">
-                <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo-image"></a>
-                <a href="index.html" class="logo-name">Legione</a>
-            </div>
-            
-            <ul class="links">
-                <li><a href="#">Inicio</a></li>
-
-                <li class="dropdown-catalogo">
-                    <a href="#">Catalogo</a>
-                    <ul class="dropdown-menu-catalogo">
-                        <li><a class="Size" href="hombre.html">Caballero</a></li>
-                        <li><a class="Size" href="#">Dama</a></li>
-                        <li><a class="Size" href="#">Niños</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Novedades</a></li>
-                <li class="dropdown-catalogo">
-                    <a href="#">Ajustes</a>
-                    <ul class="dropdown-menu-catalogo">
-                        <li><a class="Size" href="#">Informacion de la cuenta</a></li>
-                        <li><a class="Size" href="#">Contactos</a></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-
-            <div class="action-container">
-
-                <div class="bag-shopping">
-                    <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
-                </div>
-
-                <form action="">
-                    <input type="text" name="Busqueda" class="busqueda" placeholder="Carrito De Compras">
-                </form>
-                <a href="#" class="nav-link"> <i class="fa-solid fa-magnifying-glass"></i></a>
-
-                <a href="#" class="action_btn">Iniciar sesión</a>
-            </div>
-            <div class="toggle_btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            
-            </div> <!--Fin Div navbar -->
-
-        <div class="dropdown_menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Catalogo</a></li>
-            <li><a href="#">Novedades</a></li>
-            <li><a href="#">Ajustes</a></li>
-            <li><a href="#" class="action_btn">Iniciar sesion</a></li>
+      <div class="navbar">
+        <!--Div menu bar -->
+        <div class="logo-container">
+          <a href="index.html"
+            ><img src="img/logo.png" alt="Logo" class="logo-image"
+          /></a>
+          <a href="index.html" class="logo-name">Legione</a>
         </div>
+
+        <ul class="links">
+          <li><a href="#">Inicio</a></li>
+
+          <li class="dropdown-catalogo">
+            <a href="#">Catalogo</a>
+            <ul class="dropdown-menu-catalogo">
+              <li><a class="Size" href="hombre.html">Caballero</a></li>
+              <li><a class="Size" href="#">Dama</a></li>
+              <li><a class="Size" href="#">Niños</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#">Novedades</a></li>
+          <li class="dropdown-catalogo">
+            <a href="#">Ajustes</a>
+            <ul class="dropdown-menu-catalogo">
+              <li><a class="Size" href="#">Informacion de la cuenta</a></li>
+              <li><a class="Size" href="#">Contactos</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="action-container">
+          <div class="bag-shopping">
+            <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          </div>
+
+          <form action="">
+            <input
+              type="text"
+              name="Busqueda"
+              class="busqueda"
+              placeholder="Carrito De Compras"
+            />
+          </form>
+          <a href="#" class="nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+
+          <a href="#" class="action_btn">Iniciar sesión</a>
+        </div>
+        <div class="toggle_btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <!--Fin Div navbar -->
+
+      <div class="dropdown_menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Catalogo</a></li>
+        <li><a href="#">Novedades</a></li>
+        <li><a href="#">Ajustes</a></li>
+        <li><a href="#" class="action_btn">Iniciar sesion</a></li>
+      </div>
     </header>
 
     <div class="form">
-        <h1>registro</h1>
-        <form  action="registro.php" method="post">
-            <input type="text" class="entrada"  placeholder="nombre" id="name" name="name" required>
-            <input type="text" class="entrada"  placeholder="apellido" id="apellido" name="apellido">
-            <input type="email" class="entrada"  placeholder=" mail" id="mail" name="mail">
-            <input type="password" class="entrada" placeholder="contraseña" id="contra" name="password">
-            <input type="submit"  class="entrada enviar" name="enviar">
-        </form>
-        <p><a href="login.html"> Ya estas registrado ?</a></p>
+      <h1>registro</h1>
+      <form action="registro.php" method="post">
+        <input
+          type="text"
+          class="entrada"
+          placeholder="nombre"
+          id="name"
+          name="name"
+          required
+        />
+        <input
+          type="text"
+          class="entrada"
+          placeholder="apellido"
+          id="apellido"
+          name="apellido"
+        />
+        <input
+          type="email"
+          class="entrada"
+          placeholder=" mail"
+          id="mail"
+          name="mail"
+        />
+        <input
+          type="password"
+          class="entrada"
+          placeholder="contraseña"
+          id="contra"
+          name="password"
+        />
+        <input type="submit" class="entrada enviar" name="enviar" />
+      </form>
+      <p><a href="login.html"> Ya estas registrado ?</a></p>
     </div>
 
-
     <footer class="footer">
-        <div class="caja-footer-1">
-            <div class="caja-footer-1a">
-                    <div><a href="#"><img src="img/logo.png" alt="lgo de la empresa"></a></div>
-                    <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate et magnam officia aliquid sapiente doloremque distinctio maiores ad reprehenderit eos ducimus nulla veniam tempora perferendis, nobis sunt. Praesentium, quasi.</p></div>
-            </div>
-            <div class="caja-footer-1b">
-                <a href="https://github.com/angel012005/ProyectoDW"><img src="img/twitter-logo-24.png" alt="twiter(x)"></a>
-                <a href="https://github.com/angel012005/ProyectoDW"><img src="img/instagram-alt-logo-24.png" alt="instagram"></a>
-            </div>
+      <div class="caja-footer-1">
+        <div class="caja-footer-1a">
+          <div>
+            <a href="#"><img src="img/logo.png" alt="lgo de la empresa" /></a>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+              cupiditate et magnam officia aliquid sapiente doloremque
+              distinctio maiores ad reprehenderit eos ducimus nulla veniam
+              tempora perferendis, nobis sunt. Praesentium, quasi.
+            </p>
+          </div>
         </div>
-        <div class="caja-footer-2">
-            <p>Copyright © 2024 Legione. </p>
-         </div>
-            
+        <div class="caja-footer-1b">
+          <a href="https://github.com/angel012005/ProyectoDW"
+            ><img src="img/twitter-logo-24.png" alt="twiter(x)"
+          /></a>
+          <a href="https://github.com/angel012005/ProyectoDW"
+            ><img src="img/instagram-alt-logo-24.png" alt="instagram"
+          /></a>
+        </div>
+      </div>
+      <div class="caja-footer-2">
+        <p>Copyright © 2024 Legione.</p>
+      </div>
     </footer>
     <script src="js.js"></script>
-</body>
+  </body>
 </html>

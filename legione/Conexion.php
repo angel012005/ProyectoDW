@@ -1,3 +1,3 @@
 <?php
-$conex = new mysqli('localhost','root','','Usuario');
+$conex = new mysqli('localhost', 'root', '', 'Usuario');
 

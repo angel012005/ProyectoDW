@@ -5,15 +5,15 @@ $pass = $_POST["password"];
 $consulta = "SELECT * FROM  persone where nombre = '$name'";
 $resultado = $conex->query($consulta);
 $row = mysqli_fetch_array($resultado);
-     if ($pass == $row[3]){
-        echo '
+if ($pass == $row[3]) {
+   echo '
 <script>
 alert("Sesion iniciada redirigiendo al Inicio de la pagina");
 window.location = "index.html";
 </script>
    ';
-}else{
-    echo '
+} else {
+   echo '
 <script>
 alert("Usuario o contraseña incorrectos.");
 window.location = "login.html";
