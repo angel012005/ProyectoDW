@@ -94,19 +94,29 @@
     </header>
 
     <div class="caja-del-carrusel">
-      <div class="flechas"><button id="left" class="button l"><</button></div>
-      <div class="carrusel">
-        <div class="caja-img"><img src="img/botin.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/cami.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/short depo.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/short depo.jpg" alt="img" /></div>
-        <div class="caja-img"><img src="img/cami.jpg" alt="img" /></div>
+        <div class="flechas"><button id="left" class="button l"> < </button></div>
+        <div class="carrusel">
+            <div class="caja-img"><img src="img/botin.jpg" alt="img"></div>
+            <div class="caja-img"><img src="img/cami.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img"></div>
+            <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/chino qdidas.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/short depo.jpg" alt="img" ></div>
+            <div class="caja-img"><img src="img/cami.jpg" alt="img" ></div>
+            
+        </div>
+        <div class="flechas"><button id="right" class="button r">></button></div>
       </div>
-      <div class="flechas"><button id="right" class="button r">></button></div>
-    </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <script>
       const toggleBtn = document.querySelector(".toggle_btn");
       const toggleBtnIcon = document.querySelector(".toggle_btn i");
@@ -123,48 +133,44 @@
     </script>
 
     <script>
-      const carrusel = document.querySelector(".carrusel");
-      const firstImg = carrusel.querySelector("img");
-      const arrowLeft = document.getElementById("left");
-      const arrowRight = document.getElementById("right");
-      const cajaImgWidth = carrusel.querySelector(".caja-img").offsetWidth; // Ancho de una caja de imagen
-      let prevScrollLeft = 0;
+     const carrusel = document.querySelector(".carrusel");
+    const firstImg = carrusel.querySelector("img");
+    const arrowLeft = document.getElementById("left");
+    const arrowRight = document.getElementById("right")
+    const cajaImgWidth = carrusel.querySelector(".caja-img").offsetWidth; // Ancho de una caja de imagen
+    let prevScrollLeft = 0;
 
-      const autoSlide = () => {
+    
+    
+    const autoSlide = () => {
         const increment = cajaImgWidth;
         carrusel.scrollLeft += increment;
 
         // Verificar si llegamos al final del carrusel
-        if (
-          carrusel.scrollLeft + carrusel.offsetWidth >=
-          carrusel.scrollWidth
-        ) {
-          // Si llegamos al final, volvemos al inicio
-          carrusel.scrollLeft = 0;
+        if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+            // Si llegamos al final, volvemos al inicio
+            carrusel.scrollLeft = 0;
         }
 
         prevScrollLeft = carrusel.scrollLeft;
         setTimeout(autoSlide, 3000);
-      };
-      // Agregar event listener para la flecha izquierda
-      arrowLeft.addEventListener("click", () => {
+    }
+    // Agregar event listener para la flecha izquierda
+        arrowLeft.addEventListener("click", () => {
         carrusel.scrollLeft -= cajaImgWidth;
-      });
+        });
 
-      // Agregar event listener para la flecha derecha
-      arrowRight.addEventListener("click", () => {
+    // Agregar event listener para la flecha derecha
+        arrowRight.addEventListener("click", () => {
         carrusel.scrollLeft += cajaImgWidth;
 
         // Verificar si llegamos al final del carrusel
-        if (
-          carrusel.scrollLeft + carrusel.offsetWidth >=
-          carrusel.scrollWidth
-        ) {
-          // Si llegamos al final, volvemos al inicio
-          carrusel.scrollLeft = 0;
+        if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
+            // Si llegamos al final, volvemos al inicio
+            carrusel.scrollLeft = 0;
         }
-      });
-      setTimeout(autoSlide, 3000);
+    });
+        setTimeout(autoSlide, 3000);
     </script>
 
     <footer>

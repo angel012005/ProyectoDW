@@ -201,69 +201,71 @@ header {
   display: flex;
   height: 60%;
   margin: 0% auto;
-  margin-top: 3%;
-}
-.flechas {
-  display: flex;
-  align-items: center;
-}
-.button {
-  height: 44px;
-  width: 44px;
-  color: #343f4f;
-  cursor: pointer;
-  font-size: 1.15rem;
-  background: #ebe9e9;
-  border: none;
-  border-radius: 50%;
-  z-index: 2;
-}
-.button.l {
-  margin-right: -20px;
-}
-.button.r {
-  margin-left: -20px;
-}
-
-.button:hover {
-  background: #fffb00;
-}
-
-.caja-del-carrusel .carrusel {
-  width: 100%;
-  display: flex;
-  margin: 2rem;
-  overflow: hidden;
-  position: relative;
-  scroll-behavior: smooth;
-}
-
-.caja-del-carrusel .carrusel .caja-img {
-  min-width: calc(100% / 3);
-  max-height: 100%;
-  overflow: hidden;
-}
-/*.caja-del-carrusel .carrusel .caja-img:first-child{
-    min-width: 100%;
-    esto es para que la primera imagen del carrusel ocupe 3 espacios.
-}*/
-.caja-del-carrusel .carrusel .caja-img img {
-  width: 100%;
-  height: 100%;
-}
-
-@media screen and (max-width: 900px) {
-  .caja-del-carrusel .carrusel .caja-img {
-    min-width: calc(100% / 2);
+  margin-top:3% ;
   }
-}
-@media screen and (max-width: 550px) {
-  .caja-del-carrusel .carrusel .caja-img {
-    min-width: 100%;
+  .flechas{
+      display: flex;
+      align-items: center;
   }
-}
-
-/* fin  carrusel*/
+   .button{
+      height: 44px;
+      width: 44px;
+      color: #343F4F;
+      cursor: pointer;
+      font-size: 1.15rem;
+      background: #ebe9e9;
+      border: none;
+      border-radius: 50%;
+      z-index: 5;
+    }
+    .button.l{
+      margin-right:-20px;
+    }
+    .button.r{
+      margin-left:-20px;
+    }
+    
+    .button:hover{
+      background: #fffb00;
+    }
+  
+  .caja-del-carrusel .carrusel{
+     width: 100%;
+     display: flex;
+    margin: 0% auto;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+  
+   
+  .caja-del-carrusel .carrusel .caja-img{
+      min-width: calc(100% / 3);
+      max-height: 100%;
+      overflow: hidden;
+      
+  }
+  /*.caja-del-carrusel .carrusel .caja-img:first-child{
+      min-width: 100%;
+      esto es para que la primera imagen del carrusel ocupe 3 espacios.
+  }*/
+  .caja-del-carrusel .carrusel .caja-img img{
+      width: 100%;
+      height: 100%; 
+  }
+  
+  @media screen and (max-width: 900px) {
+      .caja-del-carrusel .carrusel .caja-img{
+        min-width: calc(100% / 2);
+      }
+    }
+    @media screen and (max-width: 550px) {
+      .caja-del-carrusel .carrusel .caja-img{
+        min-width: 100%;
+      }
+    }
+    
+  /* fin  carrusel*/ 
 
 /*forms*/
 .form {
