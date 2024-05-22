@@ -26,8 +26,7 @@
                     <a href="#" class="nav-link"><img src="img/search-alt-2-regular-24.png" alt="Busqueda"></a>
                 </li>
 
-                <li><a href="carrito.html" class="nav-link"><img src="img/shopping-bag-alt-solid-24.png"
-                            alt="Carrito"></a></li>
+                <li><a href="carrito.html" class="nav-link"><img src="img/shopping-bag-alt-solid-24.png" alt="Carrito"></a></li>
                 <li><a href="#" class="nav-link"><img src="img/male-regular-24.png" alt="iniciar sesion"></a>
                     <ul>
                         <li><a href="login.html">Iniciar sesion</a></li>

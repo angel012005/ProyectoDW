@@ -23,8 +23,8 @@ if (isset($_POST["enviar"])) {
       $pas = $_POST["password"];
       $mail = $_POST["mail"];
       $consulta = "INSERT INTO persone values ('$name','$ape','$mail','$pas')";
-      $ejecutar = $conex->query($consulta);
-
+      $ejecutar =  $conex->query($consulta);
+      
       echo '
         <script>
         alert("usuario guardado exitosamente");

@@ -5,9 +5,7 @@ document.getElementById("from_log").addEventListener("submit", function(event) {
     if (!passwordRegex.test(password)) {
         event.preventDefault(); // Evita que se envíe el formulario
         alert("La contraseña debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.");
-    }
-    //holaaas
-    
+    } 
 });
 
 
