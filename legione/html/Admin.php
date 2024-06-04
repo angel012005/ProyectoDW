@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../CSS/stiyle.css">
 </head>
 
 <body>
     <header class="header">
         <div class="logo">
-            <a href="#"><img src="img/logo-fotor-bg-remover-20240407131628.png" alt="logo de la compañia"></a>
+            <a href="#"><img src="../img/logo-fotor-bg-remover-20240407131628.png" alt="logo de la compañia"></a>
             <h2 class="Nombre_Empresa">Legione</h2>
         </div>
 
@@ -23,19 +23,19 @@
                     <form action="">
                         <input type="text" name="Busqueda" class="buz" placeholder="Carrito De Compras">
                     </form>
-                    <a href="#" class="nav-link"><img src="img/search-alt-2-regular-24.png" alt="Busqueda"></a>
+                    <a href="#" class="nav-link"><img src="../img/search-alt-2-regular-24.png" alt="Busqueda"></a>
                 </li>
 
                 <li><a href="carrito.html" class="nav-link"><img src="img/shopping-bag-alt-solid-24.png" alt="Carrito"></a></li>
-                <li><a href="#" class="nav-link"><img src="img/male-regular-24.png" alt="iniciar sesion"></a>
+                <li><a href="#" class="nav-link"><img src="../img/male-regular-24.png" alt="iniciar sesion"></a>
                     <ul>
                         <li><a href="login.html">Iniciar sesion</a></li>
                         <li><a href="#">Mis pedidos</a></li>
-                        <li><a href="admin.php">Subir imagen</a></li>
+                        <li><a href="admin.php">Subir imagen</a></li>a
                     </ul>
 
                 </li>
-                <li><a href="#" class="nav-link"><img src="img/menu-regular-24.png" alt="Menu"></a>
+                <li><a href="#" class="nav-link"><img src="../img/menu-regular-24.png" alt="Menu"></a>
                     <Ul>
                         <li><a href="#">Mujer</a></li>
                         <li><a href="hombre.html">Hombre</a></li>
@@ -51,7 +51,7 @@
 
 
     <h1>Suba una imagen</h1>
-    <form action="admin_form.php" method="post" enctype="multipart/form-data">
+    <form action="../PHP/admin_form.php" method="post" enctype="multipart/form-data">
 
         <input type="text" name="nombre" required>
         <input type="file" name="imagen" required>
