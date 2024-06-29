@@ -72,7 +72,6 @@
     </header>
 
     <div class="caja-del-carrusel">
-        <div class="flechas"><button id="left" class="button l"> < </button></div>
         <div class="carrusel">
             <div class="caja-img"><img src="../img/botin.jpg" alt="img"></div>
             <div class="caja-img"><img src="../img/cami.jpg" alt="img" ></div>
@@ -83,7 +82,6 @@
             <div class="caja-img"><img src="../img/cami.jpg" alt="img" ></div>
             
         </div>
-        <div class="flechas"><button id="right" class="button r">></button></div>
       </div>
 
 <br>
@@ -133,22 +131,7 @@
 
         prevScrollLeft = carrusel.scrollLeft;
         setTimeout(autoSlide, 3000);
-    }
-    // Agregar event listener para la flecha izquierda
-        arrowLeft.addEventListener("click", () => {
-        carrusel.scrollLeft -= cajaImgWidth;
-        });
-
-    // Agregar event listener para la flecha derecha
-        arrowRight.addEventListener("click", () => {
-        carrusel.scrollLeft += cajaImgWidth;
-
-        // Verificar si llegamos al final del carrusel
-        if (carrusel.scrollLeft + carrusel.offsetWidth >= carrusel.scrollWidth) {
-            // Si llegamos al final, volvemos al inicio
-            carrusel.scrollLeft = 0;
-        }
-    });
+    }  
         setTimeout(autoSlide, 3000);
 </script>
 <footer class="footer">
