@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: WEB-MateandoJuntos
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - db
+    ports:
+      - "4630:80"
+    volumes:
+      - /home/angel/Mateando-Juntos/src:/var/www/html/Mateando-Juntos
+
+  db:
+    image: mysql:8.0
+    container_name: DB-MateandoJuntos
+    environment:
+      MYSQL_ROOT_PASSWORD: '[morena2023]'
+      MYSQL_DATABASE: Mateando_Juntos
+      MYSQL_USER: dba
+      MYSQL_PASSWORD: urudevsdba
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+

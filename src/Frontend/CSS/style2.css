@@ -1,0 +1,707 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+/*HEADER STYLE*/
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fcfcfc;
+    z-index: 100;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.Logo img {
+    width: 5rem;
+    transition: transform 2s ease;
+}
+
+.Logo:hover {
+    transform: scale(1.4);
+
+}
+
+.icons_nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 2vh;
+    margin-left: 8px;
+}
+
+.icons_nav #message,
+#group {
+    display: none;
+}
+
+.icons_nav .Profile {
+    position: relative;
+
+}
+
+.icons_nav .Profile .dropdown-menu-profile {
+    display: none;
+    width: 10rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.icons_nav .Profile:hover .dropdown-menu-profile {
+    display: block;
+
+}
+
+.dropdown-menu-profile li {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.dropdown-menu-profile li a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu-profile li a:hover {
+    background-color: #f1f1f1;
+    width: 100%;
+}
+
+.dropdown-menu-profile li label.Size {
+    margin-right: 10px;
+    /* Espacio entre el label y el checkbox */
+}
+
+
+.dropdown-menu-profile li input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.icons_nav img {
+    width: 1.5rem;
+    /* Ajustar el tamaño según sea necesario */
+    margin: 1rem;
+    transition: transform 0.3s;
+}
+
+.icons_nav img:hover {
+    transform: translateY(-10px);
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+}
+
+
+.Size {
+    font-size: 14px;
+}
+
+/*CHATS STYLES*/
+
+.chat-app {
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    overflow: hidden;
+}
+
+.chat-sidebar {
+    width: 25%;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    height: 60px;
+    padding: 15px;
+    background-color: #626262;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-height: 400px; /* Ajusta la altura según sea necesario */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Color de fondo suave */
+}
+
+.chat-item {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-item:hover {
+    background-color: #e0f7fa; /* Color de fondo al pasar el mouse */
+}
+
+.chat-item.active {
+    background-color: #e7f3ff;
+}
+
+.chat-item p {
+    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+}
+
+.last-message {
+    color: #888;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.chat-timestamp {
+    font-size: 12px;
+    color: #888;
+    float: right;
+    margin-top: -25px;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    height: 60px;
+    padding: 15px;
+    background-color: #626262;
+    color: white;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilo para la imagen de perfil en el encabezado */
+.chat-header .header-profile-photo {
+    width: 40px; /* Tamaño de la imagen de perfil */
+    height: 40px;
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    margin-right: 10px; /* Espacio entre la imagen y el nombre */
+    display: inline; /* Se muestra solo si hay imagen */
+}
+
+/* Estilo para el nombre del chat */
+.chat-header-name {
+    font-size: 20px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+}
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* Alinea los mensajes en una columna, uno debajo del otro */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    display: inline-block;
+    position: relative;
+}
+
+.message.received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.message.sent {
+    margin-top: 5px;
+    background-color: #626262;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: #888;
+    position: absolute;
+    bottom: -18px;
+    right: 10px;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9; /* Fondo del input */
+}
+
+.chat-input input {
+    flex: 1;
+    border: none;
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: #e0e0e0;
+    font-size: 14px;
+}
+
+.chat-input button {
+    background-color: #626262;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.chat-input button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Estilo para la foto de perfil */
+.chat-list .profile-photo {
+    width: 50px; /* Aumentar tamaño de la foto */
+    height: 50px; /* Aumentar tamaño de la foto */
+    border-radius: 50%; /* Hace que la foto sea redonda */
+    margin-right: 10px; /* Espacio entre la foto y el texto */
+}
+
+/* Contenedor para el nombre de usuario y último mensaje */
+.chat-details {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
+}
+
+/* Estilo para el último mensaje */
+.last-message {
+    font-size: 0.9em; /* Texto más pequeño */
+    color: #666; /* Color de texto más suave */
+}
+
+/* Estilo para la marca de tiempo */
+.chat-timestamp {
+    font-size: 0.8em; /* Texto más pequeño */
+    color: #999; /* Color de texto más suave */
+}
+
+/* Añadir espacio para el último mensaje y timestamp */
+.chat-item .last-message,
+.chat-item .chat-timestamp {
+    margin-top: 5px; /* Espacio entre el último mensaje y la marca de tiempo */
+}
+
+
+/*-----------------------------------------------------------------------SETTINGS USEER-----------------------------------------------------------------------------------------*/
+
+.settings-container {
+    display: flex;
+    height: 110vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.settings-container-user {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Sidebar Styles */
+.settings-menu {
+    width: 250px;
+    background-color: #808080;
+    padding: 20px;
+    border-radius: 8px 0 0 8px;
+}
+
+.settings-menu nav a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.settings-menu nav a:hover {
+    color: #a7a8a8;
+}
+
+/* Main Content Styles */
+.settings-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.settings-content section {
+    margin-bottom: 30px;
+}
+
+.settings-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #34495e;
+    border-bottom: 2px solid #808080;
+    padding-bottom: 10px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+}
+
+.preview-container {
+    margin-top: 10px;
+    width: 20rem;
+    height: 20rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.preview-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.settings-content button {
+    background-color: #626262;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.settings-content button:hover {
+    background-color: #808080;
+}
+
+
+/*-----------------------------------------------------------------------------------settings user privacity---------------------------------------------------------------------------------------------*/
+
+
+.form-group-privacity {
+    margin-bottom: 20px;
+}
+
+
+.form-group-privacity label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+#fa2 {
+    margin-top: 2rem;
+}
+
+.form-group-privacity select {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/*-----------------------------------------------------------------------------------Settings user notifications----------------------------------------------------------------------------------------*/
+
+.form-group-notification {
+    margin-bottom: 20px;
+}
+
+.form-group-notification label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+
+.form-group-notification select {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+/*----------------------------------------------------------settings idiom user------------------------------------------------------------------------------------------------------------*/
+
+.form-group-idiom {
+    margin-bottom: 20px;
+}
+
+
+.form-group-idiom label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+
+.form-group-idiom select {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/*DARKMODE*/
+/* Estilos generales para el modo oscuro */
+
+.dark-mode header {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .dropdown-menu-profile {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .dropdown-menu-profile li a {
+    color: #fff;
+}
+
+.dark-mode .dropdown-menu-profile li a:hover {
+    background-color: #666;
+}
+
+.dark-mode .icons_nav .Profile .dropdown-menu-profile {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .chat-app {
+    background: #444;
+    color: #000000;
+}
+
+.dark-mode .settings-container {
+    background-color: #444;
+}
+
+.dark-mode .settings-content h3 {
+    color: #000000;
+}
+
+.dark-mode .form-group label{
+    color: #000000;
+}
+
+.dark-mode .chat-item p {
+    color: #fff;
+}
+
+.dark-mode .chat-header h2 {
+    color: #ffffff;
+}
+
+.dark-mode .form-group input[type="text"] {
+    background-color: #7d7c7c;
+}
+/*-----------------------------------------------------------------------------------Perfil de usuario----------------------------------------------------------------------------------------*/
+.perfil-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px; /* Espacio entre las columnas */
+}
+
+.left-column {
+    flex: 1;
+    height: 100vh;
+    width: 40%;
+    padding-right: 10px; /* Un pequeño padding para evitar que el contenido toque el borde derecho */
+}
+
+/* Asegúrate de que la columna derecha sea fija */
+.right-column {
+   width: 60%;
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* Esto asegura que se alinee al principio */
+    height: 100vh;
+    overflow-y: auto; /* Esto es opcional si también quieres scroll en el contenido derecho si es necesario */
+    padding-left: 10px; /* Un pequeño padding para evitar que el contenido toque el borde izquierdo */
+}
+
+/* Estilo para las secciones dentro de las columnas */
+.profile-header, .profile-follow {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.FotoPerfil {
+    width: 50px; /* Aumentar tamaño de la foto */
+    height: 50px; /* Aumentar tamaño de la foto */
+    border-radius: 50%; /* Hace que la foto sea redonda */
+    margin-right: 10px; /* Espacio entre la foto y el texto */
+}
+.profile-info h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    
+}
+
+.profile-info p {
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Sección de los posts del usuario */
+.center_bar_content h3 {
+  
+    font-size: 1.3rem;
+    color: #333;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+/* chatsssssssssssssssssssssssssssssssssssss */
+/* Estilo general para la lista de chats */
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-container {
+
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .preview-container{
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .settings-container-user {
+        
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .settings-menu {
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    .settings-content {
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .chat-timestamp {
+        display: none;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+

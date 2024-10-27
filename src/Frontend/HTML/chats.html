@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="icon" type="image/png" href="../img/logo-removebg-preview.png">
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <div class="left">
+            <a href="home.html" class="Logo"><img src="../img/logo-removebg-preview.png" alt="Logo"></a>
+        </div>
+        <div class="right">
+            <ul class="icons_nav">
+                <li><a href="#" id="group"><img src="../img/group_2811041.png" alt="mensagges"></a></li>
+                <li><a href="chats.html" id="message"><img src="../img/rectangular-speech-bubble_32642.png"
+                            alt="comunitys"></a></li>
+            </ul>
+            <div class="search_box">
+                <a href="#"><img src="../img/magnifier_64673.png" alt=""></a>
+                <input type="text" placeholder="Busqueda">
+            </div>
+            <ul class="icons_nav">
+                <li class="Profile">
+                    <a href="#"><img src="../img/avatar_167770.png" alt=""></a>
+                    <ul class="dropdown-menu-profile">
+
+                        <li><a class="Size" href="../../Backend/PHP/CloseSession.php">Cerar sesion</a></li>
+
+                        <li>
+                            <label for="darkmode" class="Size">Modo Oscuro</label>
+                            <input type="checkbox" name="darkmode" id="darkmode">
+                        </li>
+
+                        <li><a class="Size" href="Settings_user.html">Ajustes</a></li>
+
+                        <li><a class="Size" href="Perfil.html">Perfil</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><img src="../img/bell_143144.png" alt="bell_notifications"></a></li>
+
+            </ul>
+        </div>
+    </header>
+    <!--HEADER-->
+
+    <div class="chat-app" id="chat-app">
+        <!-- Left Sidebar with Recent Chats -->
+        <div class="chat-sidebar" id="chat-sidebar">
+            <div class="sidebar-header" id="sidebar-header">
+                <h3>Chats</h3>
+            </div>
+            <div class="chat-list" id="chat-list">
+                <!-- Aquí se llenarán dinámicamente los chats disponibles -->
+            </div>
+        </div>
+
+        <!-- Right Chat Area -->
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header" id="chat-header">
+                <img id="header-profile-photo" src="" alt="Profile Photo" class="header-profile-photo" style="display: none;">
+                <h2 id="chat-header-name">Selecciona un chat</h2>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Aquí se llenarán los mensajes del chat seleccionado -->
+            </div>
+            <div class="chat-input" id="chat-input" style="display: none;">
+                <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+                <button type="button" id="send-button">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/js.js"></script>
+    <script type="module" src="../JS/Mensaje.js"></script>
+</body>
+</html>
